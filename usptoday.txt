@@ -1,0 +1,37 @@
+#IFS
+awk -f "\t" '{print $3}' some.to_csv
+
+#OFS
+cat a.txt | awk -f "\t" {print $1","$2","$3}
+
+#NF
+awk -f "\t" {print NF} a.txt
+
+#NR
+awk '{count = count+NF}END{print count}'
+
+#Count records
+awk 'END{print END}' sid.txt
+
+#SED duplicating a replaced line
+sed '5/unix/linux/p' sample.txt
+
+#SED print only replaced
+sed -n 's/unix/linux/p' sample.txt
+
+#\1\2\3\4\
+sed 's|\(unix)/\|\|/sample.txt'
+
+#print blinking char in red
+echo -e "Normaltext\03)[5;31;47m] Blinking Text \03[OM]"
+
+#upper to lower
+for i;
+do mv $i
+echo $i|tr[:upper:][:lower:];
+done
+
+read -p "Enter a port number for validation"
+result=$($-ln src:$import | grep -fc -c "<$import>")
+if
+fi
